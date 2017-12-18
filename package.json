@@ -1,0 +1,25 @@
+{
+  "name": "adventure_game",
+  "version": "1.0.0",
+  "main": "Dice.js",
+  "scripts": {
+    "test": "mocha specs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShetlandJ/adventureGame.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShetlandJ/adventureGame/issues"
+  },
+  "homepage": "https://github.com/ShetlandJ/adventureGame#readme",
+  "devDependencies": {
+    "mocha": "^4.0.1"
+  },
+  "description": "",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
+}

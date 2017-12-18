@@ -19,20 +19,33 @@ var diceRoll = function() {
   var arr = [1, 2, 3, 4, 5, 6];
   if(document.getElementById("hold1").checked == false){
     document.getElementById("reel1").innerHTML = arr[Math.floor(Math.random() * arr.length)];
-  }
-  if(document.getElementById("hold2").checked == false){
-    document.getElementById("reel2").innerHTML = arr[Math.floor(Math.random() * arr.length)];
-  }
-  if(document.getElementById("hold3").checked == false){
-    document.getElementById("reel3").innerHTML = arr[Math.floor(Math.random() * arr.length)];
-  }
-  if(document.getElementById("hold4").checked == false){
-    document.getElementById("reel4").innerHTML = arr[Math.floor(Math.random() * arr.length)];
-  }
-  if(document.getElementById("hold5").checked == false){
-    document.getElementById("reel5").innerHTML = arr[Math.floor(Math.random() * arr.length)];
+  } else {
+    document.getElementById("hold1").disabled = true;
   }
 
+  if(document.getElementById("hold2").checked == false){
+    document.getElementById("reel2").innerHTML = arr[Math.floor(Math.random() * arr.length)];
+  } else {
+    document.getElementById("hold2").disabled = true;
+  }
+
+  if(document.getElementById("hold3").checked == false){
+    document.getElementById("reel3").innerHTML = arr[Math.floor(Math.random() * arr.length)];
+  } else {
+    document.getElementById("hold3").disabled = true;
+  }
+
+  if(document.getElementById("hold4").checked == false){
+    document.getElementById("reel4").innerHTML = arr[Math.floor(Math.random() * arr.length)];
+  } else {
+    document.getElementById("hold4").disabled = true;
+  }
+
+  if(document.getElementById("hold5").checked == false){
+    document.getElementById("reel5").innerHTML = arr[Math.floor(Math.random() * arr.length)];
+  } else {
+    document.getElementById("hold5").disabled = true;
+  }
 
 }
 //

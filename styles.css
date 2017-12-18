@@ -13,3 +13,7 @@ p {
 #results1, #results2, #results3 {
   flex-direction: row;
 }
+
+#reel-display {
+  display: flex;
+}

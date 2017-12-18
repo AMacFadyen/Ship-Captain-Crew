@@ -10,6 +10,6 @@ describe( "Dice Roll", function(){
   });
 
   it("return 5 random numbers", function(){
-    assert.strictEqual(dice.rollDice(), 12345);
+    assert.strictEqual(dice.rollDice(), 54321);
   });
 });

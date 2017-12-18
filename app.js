@@ -1,43 +1,62 @@
 var app = function(){
 
   var rollBtn = document.getElementById('roll-dice')
+  var counter = 0;
   rollBtn.addEventListener('click', function(){
-    showDiceRollNumber();
+    if (counter < 3) {
+      showDiceRollNumber();
+      counter++;
+    }
   })
 }
 
 var showDiceRollNumber = function(){
   var results1 = document.getElementById('results1');
-  var results2 = document.getElementById('results2');
-  var results3 = document.getElementById('results3');
   var dice = new Dice();
   var diceRoll = dice.rollDice()
+  var resultContainer = document.createElement('div')
+  resultContainer.className = "flexer";
   for(var number of diceRoll) {
     var result = document.createElement('p');
     result.innerText = number;
-    results1.appendChild(result);
+    resultContainer.appendChild(result)
+    results1.appendChild(resultContainer);
   }
 }
 
 var Dice = function(){
-    var die = new Die();
-    this.dice = [die, die, die, die, die];
-    this.shipExist = false;
-    this.captExist = false;
-    this.crewExist = false;
-    this.cargo = 0;
-    this.numOfRolls = 0;
+  var die = new Die();
+  this.dice = [die, die, die, die, die];
+  this.shipExist = false;
+  this.captExist = false;
+  this.crewExist = false;
+  this.cargo = 0;
+  this.numOfRolls = 0;
 };
 
 Dice.prototype.rollDice = function() {
-    var diceResults = [];
-    for(die of this.dice) {
-        var result = die.roll();
-        console.log(result)
-        diceResults.push(result);
-    };
-    return diceResults;
+
+  var gameArray = [];
+  var diceResults = [];
+  for(die of this.dice) {
+    var result = die.roll();
+    if (result === 6 && (this.shipExist !== true)) {
+      gameArray.push(result);
+      this.shipExist = true;
+    } else if (result === 5 && (this.shipExist) && (this.captExist !== true)) {
+      gameArray.push(result);
+      this.captExist = true;
+    } else if (result === 4 && (this.crewExist !== true) && (this.captExist) && (this.shipExist)) {
+      gameArray.push(result);
+      this.crewExist = true;
+    } else {
+      diceResults.push(result);
+    }
+  }
+  console.log(gameArray);
+  return diceResults.sort().reverse();
 };
+
 
 var Die = function(){
   this.sides = 6

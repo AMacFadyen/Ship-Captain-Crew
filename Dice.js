@@ -1,7 +1,7 @@
 var Die = require("./Die.js");
-console.log(Die);
+
 var Dice = function(){
-    var die = new Dice();
+    var die = new Die();
     this.dice = [die, die, die, die, die];
     this.shipExist = false;
     this.captExist = false;
@@ -10,11 +10,11 @@ var Dice = function(){
     this.numOfRolls = 0;
 };
 
-console.log(this.dice);
 Dice.prototype.rollDice = function() {
     var diceResults = [];
     for(die of this.dice) {
         var result = die.roll();
+        console.log(result)
         diceResults.push(result);
     };
     return diceResults;

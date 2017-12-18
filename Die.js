@@ -1,10 +1,11 @@
 var Die = function(){
-    this.banked = false;
+  this.sides = 6
+  this.banked = false;
 };
 
-Die.prototype.roll = function () {
-    var rand = Math.floor(Math.random() * 6);
-    return rand;
-};
+Die.prototype.roll = function(){
+  var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+  return randomNumber;
+}
 
 module.exports = Die;

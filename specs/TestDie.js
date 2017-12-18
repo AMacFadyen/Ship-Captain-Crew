@@ -1,17 +1,15 @@
 var assert = require("assert");
 var Die = require("../Die.js");
-var Dice = require("../Dice.js");
 
-describe( "Dice Roll", function(){
-  var dice;
+
+describe( "Die Roll", function(){
   var die;
 
   beforeEach(function(){
     die = new Die();
-    dice = new Dice();
   });
 
   it("return 5 random numbers", function(){
-    assert.strictEqual(dice.rollDice(), 12345);
+    assert.strictEqual(die.roll(), 4);
   });
 });

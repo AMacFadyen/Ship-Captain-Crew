@@ -13,3 +13,18 @@ describe( "Dice Roll", function(){
     assert.strictEqual(dice.rollDice(), 12345);
   });
 });
+
+//BELOW IS UNREALTED TO TEST DICE
+// if (this.currentRoll === 6 && !shipExist) {
+//             shipExist = true;
+//             this.isSelected = true;
+//         }else
+//         if (this.currentRoll === 5 && shipExist && !captExist ) {
+//             captExist = true;
+//             this.isSelected = true;
+//         }else
+//         if (this.currentRoll === 4 && shipExist && captExist && !crewExist) {
+//             crewExist = true;
+//             this.isSelected = true;
+//         }
+//         if(this.isSelected){

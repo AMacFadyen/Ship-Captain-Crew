@@ -14,9 +14,13 @@ Dice.prototype.rollDice = function() {
     var diceResults = [];
     for(die of this.dice) {
         var result = die.roll();
-        console.log(result)
+        // console.log(result)
         diceResults.push(result);
+        console.log(diceResults);
+        this.numOfRolls += 1;
+
     };
+    diceResults = diceResults.sort((a, b) => b - a);
     return diceResults;
 };
 

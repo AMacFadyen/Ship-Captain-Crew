@@ -3,7 +3,7 @@ var app = function(){
   var rollBtn = document.getElementById('roll-dice')
   var counter = 0;
   rollBtn.addEventListener('click', function(){
-    if (counter < 3) {
+    if (counter < 6) {
       showDiceRollNumber();
       counter++;
     }
@@ -35,7 +35,6 @@ var Dice = function(){
 };
 
 Dice.prototype.rollDice = function() {
-
   var gameArray = [];
   var diceResults = [];
   for(die of this.dice) {
@@ -43,18 +42,26 @@ Dice.prototype.rollDice = function() {
     if (result === 6 && (this.shipExist !== true)) {
       gameArray.push(result);
       this.shipExist = true;
+      this.dice.splice(result, 1);
     } else if (result === 5 && (this.shipExist) && (this.captExist !== true)) {
       gameArray.push(result);
       this.captExist = true;
+      this.dice.splice(result, 1);
+
     } else if (result === 4 && (this.crewExist !== true) && (this.captExist) && (this.shipExist)) {
       gameArray.push(result);
       this.crewExist = true;
+      this.dice.splice(result, 1);
+
     } else {
       diceResults.push(result);
     }
   }
   console.log(gameArray);
+  // if (diceResults.length === 2) {
+  //   console.log(diceResults.reduce)
   return diceResults.sort().reverse();
+// }
 };
 
 

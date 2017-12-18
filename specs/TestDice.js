@@ -4,10 +4,8 @@ var Dice = require("../Dice.js");
 
 describe( "Dice Roll", function(){
   var dice;
-  var die;
 
   beforeEach(function(){
-    die = new Die();
     dice = new Dice();
   });
 

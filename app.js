@@ -25,6 +25,7 @@ var showDiceRollNumber = function(){
 }
 
 var Dice = function(){
+<<<<<<< HEAD
   var die = new Die();
   this.dice = [die, die, die, die, die];
   this.shipExist = false;
@@ -62,6 +63,41 @@ Dice.prototype.rollDice = function() {
   //   console.log(diceResults.reduce)
   return diceResults.sort().reverse();
 // }
+=======
+    var die = new Die();
+    this.dice = [die, die, die, die, die];
+    this.shipExists = false;
+    this.captainExists = false;
+    this.crewExists = false;
+    this.cargo = 0;
+    this.numOfRolls = 0;
+};
+
+Dice.prototype.rollDice = function() {
+    var diceResults = [];
+    var winningDiceRoll = 0;
+    for(die of this.dice) {
+        var result = die.roll();
+        if (result === 6 && !shipExist){
+            shipExist =true;
+            winningDiceRoll += 1;
+        }else
+        if(result === 5 && shipExists && !captainExists){
+            captainExists = true;
+            winningDiceRoll +=1;
+        }else
+        if(result === 4 && shipExists && captainExists && !crewExists){
+            crewExists = true;
+            winningDiceRoll += 1;
+        }
+
+        .sort(function(a, b){return b - a});
+
+
+        diceResults.push(result);
+    };
+    return diceResults;
+>>>>>>> c4cf9a3fcde1ba8a57235e7ee6b9c31c8925401e
 };
 
 

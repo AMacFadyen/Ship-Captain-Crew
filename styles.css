@@ -17,3 +17,7 @@ p {
 #reel-display {
   display: flex;
 }
+
+#cpu-reel-display {
+  display: flex;
+}
